@@ -29,20 +29,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Click handlers
 
     @IBAction func launchAtLoginClicked(_ sender: NSMenuItem) {
-        print("launchAtLoginClicked")
         LaunchAtLogin.isEnabled = !LaunchAtLogin.isEnabled
         setLaunchAtLoginState()
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
-        print("quitClicked")
         NSApplication.shared.terminate(self)
     }
 
     // MARK: Notification handlers
 
     func setupNotificationHandlers() {
-        print("setupNotificationHandlers")
         [
             NSWorkspace.willSleepNotification: #selector(onPowerDown(note:)),
             NSWorkspace.willPowerOffNotification: #selector(onPowerDown(note:)),
@@ -53,18 +50,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func onPowerDown(note: NSNotification) {
-        print("onPowerDown")
         let isPowerAdapterConnected = IOPSCopyExternalPowerAdapterDetails()?.takeRetainedValue() != nil
 
-        print("isPowerAdapterConnected", isPowerAdapterConnected)
-        
-        if (isPowerAdapterConnected) {
+
+        if (!isPowerAdapterConnected) {
+            print("No power adapter detected, turning bluetooth off!")
             setBluetooth(powerOn: false)
+        } else {
+            print("Power adapter detected, turning bluetooth off skipped!")
         }
     }
 
     @objc func onPowerUp(note: NSNotification) {
-        print("onPowerDown")
         setBluetooth(powerOn: true)
     }
 
@@ -89,7 +86,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func setLaunchAtLoginState() {
-        print("setLaunchAtLoginState")
         let state = LaunchAtLogin.isEnabled ? NSControl.StateValue.on : NSControl.StateValue.off
         launchAtLoginMenuItem.state = state
     }
