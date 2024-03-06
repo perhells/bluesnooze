@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43EDB54E2B97279B007ED282 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 43EDB54D2B97279B007ED282 /* LaunchAtLogin */; };
+		4399B3232B987556000652F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F229ABF243CC29600B1784C /* Assets.xcassets */; };
+		4399B3242B987556000652F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F229AC1243CC29600B1784C /* MainMenu.xib */; };
+		43EDB54E2B97279B007ED282 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 43EDB54D2B97279B007ED282 /* LaunchAtLogin */; settings = {ATTRIBUTES = (Required, ); }; };
 		4F229ABE243CC29500B1784C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F229ABD243CC29500B1784C /* AppDelegate.swift */; };
-		4F229AC0243CC29600B1784C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F229ABF243CC29600B1784C /* Assets.xcassets */; };
-		4F229AC3243CC29600B1784C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F229AC1243CC29600B1784C /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +35,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4399B31C2B986F71000652F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4F229AB1243CC29500B1784C = {
 			isa = PBXGroup;
 			children = (
 				4F229ABC243CC29500B1784C /* Bluesnooze */,
 				4F229ABB243CC29500B1784C /* Products */,
+				4399B31C2B986F71000652F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,11 +81,12 @@
 			buildPhases = (
 				4F229AB6243CC29500B1784C /* Sources */,
 				4F229AB7243CC29500B1784C /* Frameworks */,
-				4F229AB8243CC29500B1784C /* Resources */,
+				4399B3222B98754C000652F6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4399B3212B9873AD000652F6 /* PBXTargetDependency */,
 			);
 			name = Bluesnooze;
 			packageProductDependencies = (
@@ -95,8 +104,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1430;
-				ORGANIZATIONNAME = "Oliver Peate";
+				LastUpgradeCheck = 1520;
+				ORGANIZATIONNAME = "Per Hellström";
 				TargetAttributes = {
 					4F229AB9243CC29500B1784C = {
 						CreatedOnToolsVersion = 11.1;
@@ -105,7 +114,7 @@
 				};
 			};
 			buildConfigurationList = 4F229AB5243CC29500B1784C /* Build configuration list for PBXProject "Bluesnooze" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -126,12 +135,12 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4F229AB8243CC29500B1784C /* Resources */ = {
+		4399B3222B98754C000652F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F229AC0243CC29600B1784C /* Assets.xcassets in Resources */,
-				4F229AC3243CC29600B1784C /* MainMenu.xib in Resources */,
+				4399B3232B987556000652F6 /* Assets.xcassets in Resources */,
+				4399B3242B987556000652F6 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +156,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4399B3212B9873AD000652F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4399B3202B9873AD000652F6 /* LaunchAtLogin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4F229AC1243CC29600B1784C /* MainMenu.xib */ = {
@@ -198,6 +214,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -212,7 +229,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -260,6 +277,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -268,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -281,24 +299,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Bluesnooze/Bluesnooze.entitlements;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development: per@phsolutions.se (65GLXT3NT8)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9D64VWUUTY;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(HOME)/Library/Developer/Xcode/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Bluesnooze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.perhells.Bluesnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,24 +329,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Bluesnooze/Bluesnooze.entitlements;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development: per@phsolutions.se (65GLXT3NT8)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9D64VWUUTY;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(HOME)/Library/Developer/Xcode/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Bluesnooze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.perhells.Bluesnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,6 +389,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4399B3202B9873AD000652F6 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43EDB54C2B97279B007ED282 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
 		43EDB54D2B97279B007ED282 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 43EDB54C2B97279B007ED282 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
